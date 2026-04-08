@@ -1,14 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --bg-color: #0f172a;
-  --text-color: #f8fafc;
-  --primary-color: #3b82f6;
-  --primary-hover: #2563eb;
-  --card-bg: #1e293b;
-  --border-color: #334155;
-  --success: #10b981;
-  --error: #ef4444;
+  /* ── Military Color Palette ── */
+  --bg-color: #0b1510;
+  --bg-secondary: #0f1d13;
+  --text-color: #e8f0df;
+  --text-muted: #7a9470;
+  --text-dim: #4d6648;
+
+  /* Greens */
+  --primary-color: #4a7c3f;
+  --primary-hover: #3a6232;
+  --primary-light: rgba(74,124,63,0.18);
+
+  /* Gold / Brass */
+  --gold: #c9a84c;
+  --gold-hover: #b8952e;
+  --gold-light: rgba(201,168,76,0.15);
+  --gold-glow: rgba(201,168,76,0.35);
+
+  /* Card surfaces */
+  --card-bg: #131f10;
+  --card-hover: #192819;
+  --card-border: #2a3d24;
+  --card-border-active: #4a7c3f;
+
+  /* Status */
+  --success: #5cb85c;
+  --success-light: rgba(92,184,92,0.15);
+  --error: #d9534f;
+  --error-light: rgba(217,83,79,0.15);
+  --warning: #e8a020;
+
+  /* Mode accents */
+  --exam-accent: #8b5a2a;      /* military brown/tan for exam */
+  --exam-hover: #7a4d22;
+  --exam-light: rgba(139,90,42,0.18);
+  --shuffle-accent: #2a6b6b;   /* teal-military for shuffle */
+  --shuffle-hover: #1f5555;
+  --set-accent: #c9a84c;       /* gold for set mode */
+  --set-hover: #b8952e;
 }
 
 * {
@@ -20,13 +51,32 @@
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--bg-color);
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(74,124,63,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 90%, rgba(201,168,76,0.05) 0%, transparent 50%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,0.008) 40px,
+      rgba(255,255,255,0.008) 41px
+    );
   color: var(--text-color);
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding: 2rem 1rem;
 }
 
 #root {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-color); }
+::-webkit-scrollbar-thumb { background: var(--card-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--primary-color); }
